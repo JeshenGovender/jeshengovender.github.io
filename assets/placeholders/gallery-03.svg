@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#151413"/>
+      <stop offset="100%" stop-color="#0f0f0e"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0.2" cy="0.2" r="1">
+      <stop offset="0%" stop-color="rgba(213,166,93,0.32)"/>
+      <stop offset="100%" stop-color="rgba(213,166,93,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#g)"/>
+  <rect x="28" y="28" width="1144" height="1144" rx="34" stroke="rgba(255,255,255,0.12)"/>
+  <circle cx="936.0" cy="216.0" r="216.0" fill="url(#r)"/>
+  <circle cx="264.0" cy="900.0" r="144.0" fill="rgba(255,255,255,0.04)"/>
+  <rect x="144.0" y="312.0" width="912.0" height="576.0" rx="28" stroke="rgba(255,255,255,0.10)" fill="rgba(255,255,255,0.02)"/>
+  <text x="50%" y="45%" text-anchor="middle" fill="#f6f0e7" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="4">PROCESS</text>
+  <text x="50%" y="51%" text-anchor="middle" fill="#a86938" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="35" letter-spacing="3">KITCHEN / BEHIND-THE-SCENES</text>
+  <text x="50%" y="83%" text-anchor="middle" fill="rgba(246,240,231,0.56)" font-family="Inter, Arial, sans-serif" font-size="28" letter-spacing="2">Replace with licensed photography</text>
+</svg>

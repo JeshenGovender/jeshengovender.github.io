@@ -38,17 +38,26 @@
   }
 
   const config = window.JESHEN_SITE_CONFIG || {};
+
   const setLink = (selector, href, label) => {
     const node = document.querySelector(selector);
-    if (!node || !href || !label) return;
+    if (!node) return;
+
+    if (!href || !label) {
+      node.hidden = true;
+      return;
+    }
+
+    node.hidden = false;
     node.href = href;
+
     const strong = node.querySelector('strong');
     if (strong) strong.textContent = label;
   };
 
-  setLink('[data-contact="email"]', `mailto:${config.email || 'hello@jeshengovender.com'}`, config.email || 'hello@jeshengovender.com');
-  setLink('[data-contact="phone"]', config.phoneHref || 'tel:+270000000000', config.phoneDisplay || '+27 00 000 0000');
-  setLink('[data-contact="instagram"]', config.instagramUrl || 'https://instagram.com/', config.instagramHandle || '@jeshengovender');
+  setLink('[data-contact="email"]', config.email ? `mailto:${config.email}` : '', config.email || '');
+  setLink('[data-contact="phone"]', config.phoneHref || '', config.phoneDisplay || '');
+  setLink('[data-contact="instagram"]', config.instagramUrl || '', config.instagramHandle || '');
 
   const formEmbedUrl = config.googleFormEmbedUrl || '';
   const publicFormUrl = config.googleFormPublicUrl || '';
@@ -62,10 +71,15 @@
     publicFormLink.href = publicFormUrl;
   }
 
-  if (formEmbedWrapper && formEmbed && formPlaceholder && formEmbedUrl) {
+  if (formEmbedWrapper && formEmbed && formEmbedUrl) {
     formEmbed.src = formEmbedUrl;
     formEmbedWrapper.hidden = false;
-    formPlaceholder.hidden = true;
+
+    if (formPlaceholder) {
+      formPlaceholder.hidden = true;
+    }
+  } else if (formPlaceholder) {
+    formPlaceholder.hidden = false;
   }
 
   const lightbox = document.getElementById('lightbox');
@@ -86,6 +100,7 @@
         const image = trigger.getAttribute('data-gallery-image');
         const alt = trigger.getAttribute('data-gallery-alt') || '';
         const caption = trigger.getAttribute('data-gallery-caption') || '';
+
         lightboxImage.src = image || '';
         lightboxImage.alt = alt;
         lightboxCaption.textContent = caption;
